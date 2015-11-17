@@ -33,6 +33,7 @@ var Box = React.createClass({
    	clearInterval(this.timer);
   },
 
+
     Click : function(){
       if(this.state.value === 'X')
       {
@@ -42,7 +43,7 @@ var Box = React.createClass({
       {
         this.setState.value = 'X'
       }
-    }
+    },
 
   'render': function onRender () {
     return (
@@ -51,6 +52,13 @@ var Box = React.createClass({
   }
 });
 
-React.render(<Box initialValue='X'/>, document.body);
+var Row = React.createClass({
+  'render': function onRender() {
+    return (
+      <div><Box initialValue='X'/><Box initialValue='X'/><Box initialValue='X'/></div>
+    );
+    }
+  });
 
-file:///C:/Users/Peter/Desktop/Web_Application/tic-tac-toe/index.html
+//React.render(<Box initialValue='X'/>, document.body);
+React.render(<Row/>, document.body);
