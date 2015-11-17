@@ -7,11 +7,14 @@ var Box = React.createClass({
    * Render a HTML button
    * @return {ReactElement}
    */
+
   'render': function onRender () {
     return (
-      <button>X</button>
+    {this.props.value = "X"}
+      <button>{this.props.value}</button>
+
     );
   }
 });
 
-React.render(<Box/>, document.body);
+React.render(<Box value='X'/>, document.body);
