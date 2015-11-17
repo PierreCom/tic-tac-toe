@@ -6,18 +6,23 @@ var Style = {
   width: '100px'
 };
 
+
 var Box = React.createClass({
   /**
    * Render a HTML button
    * @return {ReactElement}
    */
+   
+   getInitialState: function() {
+     return {value : this.props.initialValue};
+   },
 
   'render': function onRender () {
     return (
-      <button style={Style}>{this.props.value}</button>
+      <button style={Style}>{this.state.value}</button>
 
     );
   }
 });
 
-React.render(<Box value='X'/>, document.body);
+React.render(<Box initialValue='Y'/>, document.body);
