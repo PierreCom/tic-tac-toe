@@ -18,9 +18,7 @@ var Box = React.createClass({
      return {value : this.props.initialValue};
    },
 
-
-
-   componentWillMount: function(){
+   /*componentWillMount: function(){
    	var old_this = this;
    	this.timer = setInterval(function(){
    	var oldValue = old_this.state.value;
@@ -30,17 +28,29 @@ var Box = React.createClass({
    	});
    	}, 300);
    	},
-
+*/
    	componentWillUnmount: function(){
    	clearInterval(this.timer);
-   	},
+  },
 
+    Click : function(){
+      if(this.state.value === 'X')
+      {
+        this.setState.value = 'O'
+      }
+      if(this.state.value === 'O')
+      {
+        this.setState.value = 'X'
+      }
+    }
 
   'render': function onRender () {
     return (
-      <button style={Style}>{this.state.value}</button>
+      <button style={Style} onClick = {this.Click}>{this.state.value}</button>
     );
   }
 });
 
-React.render(<Box initialValue='Y'/>, document.body);
+React.render(<Box initialValue='X'/>, document.body);
+
+file:///C:/Users/Peter/Desktop/Web_Application/tic-tac-toe/index.html
